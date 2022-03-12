@@ -17,8 +17,9 @@ class Restaurent {
 }
 
 const view = document.getElementById('root');
-const homeScreen = new Home();
 const restaurent = new Restaurent(view);
-view.appendChild(homeScreen.render());
+const homeScreen = new Home();
+
+restaurent.setActiveScreen(homeScreen);
 
 export default restaurent;
