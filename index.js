@@ -1,10 +1,26 @@
-import Home from "./pages/Home.js";
-
-class Restaurent {
+import { auth } from "./constants/commons.js";
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js";
+import Login from "./pages/login.js";
+import Main from "./pages/main.js";
+class Music {
     _activeScreen;
 
     constructor(view) {
         this.view = view;
+        this.onAuthListener();
+    }
+
+    onAuthListener () {
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                const main = new Main();
+                activeScreen.setActiveScreen(main);
+            } 
+            else {
+                const login = new Login();
+                activeScreen.setActiveScreen(login);
+            }
+        });
     }
 
     setActiveScreen (screen) {
@@ -17,9 +33,6 @@ class Restaurent {
 }
 
 const view = document.getElementById('root');
-const restaurent = new Restaurent(view);
-const homeScreen = new Home();
+const activeScreen = new Music(view);
 
-restaurent.setActiveScreen(homeScreen);
-
-export default restaurent;
+export default activeScreen ;
