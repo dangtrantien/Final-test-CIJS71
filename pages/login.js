@@ -81,9 +81,12 @@ class Login {
                     alert ('Login successfull');
                 }
             }
+            else {
+                alert('Wrong Email or Password');
+            }
         }
         catch (error) {
-            alert('Wrong Email or Password',error);
+            alert(error);
         }
     }
 
