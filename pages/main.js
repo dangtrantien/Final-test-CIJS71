@@ -1,12 +1,17 @@
+import Navbar from "../components/navbar.js";
+
+
 class Main {
     constructor () {
-        this.$container = document.createElement('div');
-        this.$container.innerText = 'MUSIC';
+        this.$maincontainer = document.createElement('div');
+       
+        this.$navbar = new Navbar();
+        
     }
 
     render (container) {
-
-        container.appendChild(this.$container);
+        this.$navbar.render(this.$maincontainer);
+        container.appendChild(this.$maincontainer);
     }
 }
 

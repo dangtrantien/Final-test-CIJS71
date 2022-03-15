@@ -11,7 +11,7 @@ class Login {
             'class',
             'w-screen h-screen bg-no-repeat bg-center bg-auto'
         );
-        this.$container.setAttribute('style','background-image: url(/photos/background-music-represents-sound-track-and-abstract-1540x760.jpg)')
+        this.$container.setAttribute('style','background-image: url(/photos/mohammad-metri-1oKxSKSOowE-unsplash.jpg)')
         this.$container.addEventListener('submit', this.onSubmit);
 
         this.$title = document.createElement('h1');

@@ -23,6 +23,7 @@ class Input {
             'class',
             'invisible text-white text-sm'
         );
+     
     }
 
     getValue () {
