@@ -1,8 +1,8 @@
 import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js";
 import { auth } from "../constants/commons.js";
 import Input from "../components/input.js";
-import Login from "./login.js";
 import activeScreen from "../index.js";
+import Login from "./login.js";
 
 class Register {
     constructor () {
@@ -11,13 +11,13 @@ class Register {
             'class',
             'w-screen h-screen bg-no-repeat bg-center bg-auto'
         );
-        this.$container.setAttribute('style','background-image: url(/photos/background-music-represents-sound-track-and-abstract-1540x760.jpg)')
+        this.$container.setAttribute('style','background-image: url(/photos/istockphoto-1047288798-1540x760.jpg)')
         this.$container.addEventListener('submit', this.onSubmit);
 
         this.$user = document.createElement('div');
         this.$user.setAttribute(
             'class',
-            'w-1/3 p-4 rounded-2xl border-solid border-2 absolute top-12 left-1/3'
+            'w-1/3 p-4 rounded-2xl border-solid border-2 absolute top-32 left-1/3'
         );
 
         this.$name = new Input(
@@ -88,6 +88,10 @@ class Register {
     gotoPage = () => {
         const login = new Login();
         activeScreen.setActiveScreen(login);
+    }
+
+    user_name = () => {
+        return this.$name.getValue();
     }
 
     onSubmit = async (event) => {
