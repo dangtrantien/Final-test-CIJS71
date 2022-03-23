@@ -57,7 +57,7 @@ class Login {
         this.$action = document.createElement('div');
         this.$action.setAttribute(
             'class',
-            'mt-8 flex justify-between items-center'
+            'mt-8 display_flex'
         );
 
         this.$login_Btn = document.createElement('button');
