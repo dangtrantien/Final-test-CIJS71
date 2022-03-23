@@ -1,5 +1,5 @@
 import { auth } from "../constants/commons.js";
-import CommentInput from "./comment_input.js";
+import User from "./user.js";
 import CommentList from "./comment_list.js";
 
 class CommentContainer {
@@ -10,13 +10,13 @@ class CommentContainer {
             'mx-32 divide-y-2 px-8 bg-white'
         );
 
-        this.$input_list = new CommentInput();
+        this.$user = new User();
 
         this.$comment_list = new CommentList();
     }
 
     render () {
-        this.$comment_container.appendChild(this.$input_list.render());
+        this.$comment_container.appendChild(this.$user.render());
         this.$comment_container.appendChild(this.$comment_list.render());
 
         return this.$comment_container;

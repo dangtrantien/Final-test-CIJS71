@@ -6,13 +6,11 @@ class NavBar  {
         this.$navcontainer = document.createElement('nav');
         this.$navcontainer.setAttribute(
             "class",
-            "bg-gray-800 h-17 w-screen px-8 flex-1 flex items-center justify-between fixed top-0 left-0 right-0"
+            "bg-gray-800 h-17 w-screen px-8 display_flex fixed top-0 left-0 right-0"
         );
 
         this.$logo = document.createElement('div');
-        this.$logo.setAttribute('class',
-            "flex-shrink-0 flex items-center"
-        );
+        this.$logo.setAttribute('class', "display_flex");
 
         this.$img = document.createElement('img');
         this.$img.setAttribute("class",
@@ -28,7 +26,7 @@ class NavBar  {
         this.$SoundMay.innerText = 'SoundMay';
 
         this.$UserBox = document.createElement('div');
-        this.$UserBox.setAttribute('class','flex items-center');
+        this.$UserBox.setAttribute('class','display_flex');
         
         this.$buttonSignOut=document.createElement('button');
         this.$buttonSignOut.setAttribute(

@@ -17,23 +17,20 @@ class CommentItems {
         );
 
         this.$user_name_time = document.createElement('div');
-        this.$user_name_time.setAttribute(
-            'class',
-            'flex items-center'
-        );
+        this.$user_name_time.setAttribute('class', 'display_flex');
 
         this.$user_name = document.createElement('div');
         this.$user_name.innerText = auth.currentUser.email;
 
         this.$user_message = document.createElement('p');
-        // this.$user_message.innerText = msg.content;
+        this.$user_message.innerText = msg.content;
         this.$user_message.setAttribute(
             'class',
-            'w-fit'
+            'w-fit text-lg'
         );
 
         this.$message_time = document.createElement('div');
-        // this.$message_time.innerText = `at ${msg.createDate}`;
+        this.$message_time.innerText = `at ${new Date().toLocaleTimeString()}`;
         this.$message_time.setAttribute(
             'class',
             'ml-1 text-sm text-gray-400'
