@@ -9,15 +9,15 @@ class Register {
         this.$container = document.createElement('form');
         this.$container.setAttribute(
             'class',
-            'w-screen h-screen bg-no-repeat bg-center bg-auto'
+            'w-screen h-screen bg-no-repeat bg-center bg-auto bg-cover'
         );
-        this.$container.setAttribute('style','background-image: url(/photos/background-music-represents-sound-track-and-abstract-1540x760.jpg)')
+        this.$container.setAttribute('style','background-image: url(/photos/mohammad-metri-1oKxSKSOowE-unsplash.jpg)')
         this.$container.addEventListener('submit', this.onSubmit);
 
         this.$user = document.createElement('div');
         this.$user.setAttribute(
             'class',
-            'w-1/3 p-4 rounded-2xl border-solid border-2 absolute top-12 left-1/3'
+            'bg-neutral-900 w-1/3 p-4 rounded-2xl border-solid border-2 absolute top-12 left-1/3'
         );
 
         this.$name = new Input(

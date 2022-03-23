@@ -9,22 +9,22 @@ class Login {
         this.$container = document.createElement('form');
         this.$container.setAttribute(
             'class',
-            'w-screen h-screen bg-no-repeat bg-center bg-auto'
+            'w-screen h-screen bg-no-repeat bg-center bg-auto bg-cover'
         );
         this.$container.setAttribute('style','background-image: url(/photos/mohammad-metri-1oKxSKSOowE-unsplash.jpg)')
         this.$container.addEventListener('submit', this.onSubmit);
 
-        this.$title = document.createElement('h1');
-        this.$title.innerText = 'Something here';
-        this.$title.setAttribute(
-            'class',
-            'text-8xl text-white absolute top-20 left-1/4'
-        );
+        // this.$title = document.createElement('h1');
+        // this.$title.innerText = 'Something here';
+        // this.$title.setAttribute(
+        //     'class',
+        //     'text-8xl text-white absolute top-20 left-1/4'
+        // );
 
         this.$user = document.createElement('div');
         this.$user.setAttribute(
             'class',
-            'w-1/3 p-4 rounded-2xl border-solid border-2 absolute top-1/3 left-1/3'
+            'bg-neutral-900 w-1/3 p-4 rounded-2xl border-solid border-2 absolute top-1/3 left-1/3'
         );
 
         this.$email = new Input(
@@ -91,7 +91,7 @@ class Login {
     }
 
     render (container) {
-        this.$container.appendChild(this.$title);
+        // this.$container.appendChild(this.$title);
         this.$container.appendChild(this.$user);
         this.$user.appendChild(this.$email.render());
         this.$user.appendChild(this.$password.render());

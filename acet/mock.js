@@ -11,3 +11,16 @@ export const mock = [
       "https://i0.wp.com/itsfoss.com/wp-content/uploads/2021/11/exa-features.png?w=983&ssl=1",
   },
 ];
+
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Host': 'spotify23.p.rapidapi.com',
+		'X-RapidAPI-Key': 'SIGN-UP-FOR-KEY'
+	}
+};
+
+fetch('https://spotify23.p.rapidapi.com/playlist/?id=37i9dQZF1DX4Wsb4d7NKfP', options)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
