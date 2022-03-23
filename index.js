@@ -2,6 +2,7 @@ import { auth } from "./constants/commons.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js";
 import Login from "./pages/login.js";
 import Main from "./pages/main.js";
+
 class Music {
     _activeScreen;
 

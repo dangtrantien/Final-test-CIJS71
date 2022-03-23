@@ -21,8 +21,9 @@ class Input {
         this.$error.innerText = error;
         this.$error.setAttribute(
             'class',
-            'invisible text-white text-sm'
+            'invisible text-red-500 text-sm'
         );
+     
     }
 
     getValue () {

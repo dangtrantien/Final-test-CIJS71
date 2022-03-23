@@ -3,6 +3,7 @@ import { auth } from "../constants/commons.js";
 import Input from "../components/input.js";
 import Register from "./register.js";
 import activeScreen from "../index.js";
+import Main from "./main.js";
 
 class Login {
     constructor () {
@@ -11,20 +12,34 @@ class Login {
             'class',
             'w-screen h-screen bg-no-repeat bg-center bg-auto'
         );
-        this.$container.setAttribute('style','background-image: url(/photos/background-music-represents-sound-track-and-abstract-1540x760.jpg)')
+        this.$container.setAttribute('style','background-image: url(/photos/istockphoto-1047288798-1540x760.jpg)')
         this.$container.addEventListener('submit', this.onSubmit);
 
-        this.$title = document.createElement('h1');
-        this.$title.innerText = 'Something here';
+        this.$title = document.createElement('div');
         this.$title.setAttribute(
             'class',
-            'text-8xl text-white absolute top-20 left-1/4'
+            'w-screen flex flex-col items-center text-white absolute top-20 title'
         );
+
+        this.$title_1 = document.createElement('h1');
+        this.$title_1.innerText = 'Welcome to';
+        this.$title_1.setAttribute(
+            'class',
+            'w-fit text-6xl'
+        );
+
+        this.$title_2 = document.createElement('h1');
+        this.$title_2.innerText = 'SoundMay';
+        this.$title_2.setAttribute(
+            'class',
+            'w-fit text-9xl'
+        );
+
 
         this.$user = document.createElement('div');
         this.$user.setAttribute(
             'class',
-            'w-1/3 p-4 rounded-2xl border-solid border-2 absolute top-1/3 left-1/3'
+            'w-1/3 p-4 rounded-2xl border-solid border-2 absolute top-80 left-1/3'
         );
 
         this.$email = new Input(
@@ -79,6 +94,8 @@ class Login {
                 const user = response.user;
                 if (user) {
                     alert ('Login successfull');
+                    const main = new Main();
+                    activeScreen.setActiveScreen(main);
                 }
             }
             else {
@@ -92,10 +109,14 @@ class Login {
 
     render (container) {
         this.$container.appendChild(this.$title);
+        this.$title.appendChild(this.$title_1);
+        this.$title.appendChild(this.$title_2);
+
         this.$container.appendChild(this.$user);
         this.$user.appendChild(this.$email.render());
         this.$user.appendChild(this.$password.render());
         this.$user.appendChild(this.$action);
+
         this.$action.appendChild(this.$login_Btn);
         this.$action.appendChild(this.$go_to_page);
 
