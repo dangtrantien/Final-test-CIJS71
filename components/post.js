@@ -13,7 +13,6 @@ class Post {
             this.$postImage.src = imageUrl;
             this.$postImage.setAttribute("class","w-full h-3/4");
           }
-
           render(container) {
             this.$postContainer.appendChild(this.$title);
             this.$postContainer.appendChild(this.$postImage);
