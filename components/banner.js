@@ -1,25 +1,34 @@
+
+import Song from "./songs.js";
+// import { list_song } from '../acet/mock.js';
 class Banner {
     constructor () {
         this.$bannerContainer = document.createElement('div');
         this.$bannerContainer.setAttribute(
           "class",
-          "max-w-7xl mx-auto px-2 sm:px-6 lg:px-8"
+          " mt-20  max-w-7xl mx-auto  flex  "
         );
+        this.$banner=document.createElement('div');
+        this.$banner.setAttribute('class', 'w-3/5 h-[500px] ')
 
-        this.$divImg = document.createElement('div');
-        this.$divImg.setAttribute('class', 'flex h-96');
 
-        this.$bannerImg = document.createElement('img');
-        this.$bannerImg.setAttribute("style", "background-image: url(/photos/mohammad-metri-1oKxSKSOowE-unsplash.jpg)")        
-        this.$bannerImg.setAttribute(
-            'class',
-            "h-full w-full  bg-cover bg-no-repeat bg-center"
-        );
+        this.$playlist= document.createElement('div');
+        this.$playlist.setAttribute('class',"w-2/5  h-[500px]  mt-16 bg-cover m-5 ")
+
+        
+        this.$playlist.setAttribute('style',
+        'background-image: url(http://images.genius.com/2216a21a5494b153cb4c24005370d031.700x700x1.jpg) ')
+        
+        this.$song = new Song()
     }
     render () {
-        this.$divImg.appendChild(this.$bannerImg);
-        this.$bannerContainer.appendChild(this.$divImg);
-
+        // list_song.forEach((songs) => {
+        //     const songList = new Song(songs.name[0]);
+        //     this.$playlist.appendChild(songList.render());
+        // })
+        this.$banner.appendChild(this.$song.render())
+        this.$bannerContainer.appendChild(this.$banner);
+        this.$bannerContainer.appendChild(this.$playlist);
         return this.$bannerContainer;
     }
 }

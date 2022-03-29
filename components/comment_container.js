@@ -7,7 +7,7 @@ class CommentContainer {
         this.$comment_container = document.createElement('div');
         this.$comment_container.setAttribute(
             'class',
-            'mx-32 divide-y-2 px-8 bg-white'
+            'max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 bg-white mt-20 '
         );
 
         this.$user = new User();
