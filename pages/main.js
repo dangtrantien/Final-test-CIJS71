@@ -8,7 +8,7 @@ class Main {
         this.$maincontainer = document.createElement('div');    
         this.$maincontainer.setAttribute(
             'class',
-            'h-screen bg-no-repeat bg-center bg-auto bg-gray-100'
+            'bg-no-repeat bg-center bg-auto bg-gray-100'
         );
 
         this.$nav = document.createElement('div');
