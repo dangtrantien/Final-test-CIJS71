@@ -5,7 +5,7 @@ class CommentItems {
         this.$container = document.createElement('div');
         this.$container.setAttribute(
             'class',
-            'p-4 flex'
+            'p-4 flex '
         );
 
         this.$user_icon = `<img src="../photos/icons8-user-40.png" class="h-10 w-auto mr-2">`;
