@@ -10,7 +10,7 @@ class Login {
         this.$container = document.createElement('form');
         this.$container.setAttribute(
             'class',
-            'w-screen h-screen bg-no-repeat bg-center bg-auto'
+            'w-screen h-screen bg-no-repeat bg-center bg-auto bg-cover'
         );
         this.$container.setAttribute('style','background-image: url(/photos/istockphoto-1047288798-1540x760.jpg)')
         this.$container.addEventListener('submit', this.onSubmit);
