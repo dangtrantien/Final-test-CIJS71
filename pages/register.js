@@ -11,21 +11,13 @@ class Register {
             'class',
             'w-screen h-screen bg-no-repeat bg-center bg-auto bg-cover'
         );
-// <<<<<<< HEAD
-        this.$container.setAttribute('style','background-image: url(/photos/mohammad-metri-1oKxSKSOowE-unsplash.jpg)')
-// =======
         this.$container.setAttribute('style','background-image: url(/photos/istockphoto-1047288798-1540x760.jpg)')
-// >>>>>>> upstream/tiến
         this.$container.addEventListener('submit', this.onSubmit);
 
         this.$user = document.createElement('div');
         this.$user.setAttribute(
             'class',
-// <<<<<<< HEAD
-//             'bg-neutral-900 w-1/3 p-4 rounded-2xl border-solid border-2 absolute top-12 left-1/3'
-// =======
             'w-1/3 p-4 rounded-2xl border-solid border-2 absolute top-32 left-1/3'
-// >>>>>>> upstream/tiến
         );
 
         this.$name = new Input(

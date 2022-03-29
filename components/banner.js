@@ -1,6 +1,5 @@
-
 import Song from "./songs.js";
-// import { list_song } from '../acet/mock.js';
+
 class Banner {
     constructor () {
         this.$bannerContainer = document.createElement('div');
@@ -22,13 +21,10 @@ class Banner {
         this.$song = new Song()
     }
     render () {
-        // list_song.forEach((songs) => {
-        //     const songList = new Song(songs.name[0]);
-        //     this.$playlist.appendChild(songList.render());
-        // })
         this.$banner.appendChild(this.$song.render())
         this.$bannerContainer.appendChild(this.$banner);
         this.$bannerContainer.appendChild(this.$playlist);
+
         return this.$bannerContainer;
     }
 }

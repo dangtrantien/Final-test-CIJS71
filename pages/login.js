@@ -15,12 +15,6 @@ class Login {
         this.$container.setAttribute('style','background-image: url(/photos/istockphoto-1047288798-1540x760.jpg)')
         this.$container.addEventListener('submit', this.onSubmit);
 
-        // this.$title = document.createElement('h1');
-        // this.$title.innerText = 'Something here';
-        // this.$title.setAttribute(
-        //     'class',
-        //     'text-8xl text-white absolute top-20 left-1/4'
-        // );
         this.$title = document.createElement('div');
         this.$title.setAttribute(
             'class',
@@ -45,7 +39,6 @@ class Login {
         this.$user = document.createElement('div');
         this.$user.setAttribute(
             'class',
-            // 'bg-neutral-900 w-1/3 p-4 rounded-2xl border-solid border-2 absolute top-1/3 left-1/3'
             'w-1/3 p-4 rounded-2xl border-solid border-2 absolute top-80 left-1/3'
         );
 
@@ -115,7 +108,6 @@ class Login {
     }
 
     render (container) {
-        // this.$container.appendChild(this.$title);
         this.$container.appendChild(this.$title);
         this.$title.appendChild(this.$title_1);
         this.$title.appendChild(this.$title_2);

@@ -24,7 +24,7 @@ export const mock = [
 // 	.then(response => response.json())
 // 	.then(response => console.log(response))
 // 	.catch(err => console.error(err));
-// =======
+
 export const subs_mock = [
   {
     subs_button: 'Like',
@@ -61,7 +61,7 @@ export const subs_mock = [
     </svg>`
   },
 ]
-// >>>>>>> upstream/tiến
+
 export const list_song= [
   {
     name: "Click Pow Get Down",
