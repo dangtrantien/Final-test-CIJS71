@@ -1,7 +1,9 @@
 import { auth } from "../constants/commons.js"
 
 class CommentItems {
-    constructor (msg) {
+    constructor(msg, activeComment) {
+        this._setActiveComment = activeComment;
+
         this.$container = document.createElement('div');
         this.$container.setAttribute(
             'class',
@@ -33,13 +35,13 @@ class CommentItems {
         this.$message_time.innerText = `at ${new Date().toLocaleTimeString()}`;
         this.$message_time.setAttribute('class', 'ml-1');
     }
-    
-    render () {
+
+    render() {
         this.$container.appendChild(this.$user);
-        this.$user.insertAdjacentHTML('beforeBegin',this.$user_icon);
+        this.$user.insertAdjacentHTML('beforeBegin', this.$user_icon);
         this.$user.appendChild(this.$user_name_time);
         this.$user_name_time.appendChild(this.$user_name);
-        this.$user_name.insertAdjacentElement('afterend',this.$message_time);
+        this.$user_name.insertAdjacentElement('afterend', this.$message_time);
         this.$user.appendChild(this.$user_message);
 
         return this.$container;

@@ -2,7 +2,6 @@ import { auth } from "./constants/commons.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js";
 import Login from "./pages/login.js";
 import Main from "./pages/main.js";
-import MainDetail from "./pages/maindetail.js";
 class Music {
     _activeScreen;
 
@@ -11,12 +10,12 @@ class Music {
         this.onAuthListener();
     }
 
-    onAuthListener () {
+    onAuthListener() {
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 const main = new Main();
                 activeScreen.setActiveScreen(main);
-            } 
+            }
             else {
                 const login = new Login();
                 activeScreen.setActiveScreen(login);
@@ -24,8 +23,8 @@ class Music {
         });
     }
 
-    setActiveScreen (screen) {
-        if(this._activeScreen) {
+    setActiveScreen(screen) {
+        if (this._activeScreen) {
             this.view.innerHTML = '';
         }
         this._activeScreen = screen;
@@ -36,4 +35,4 @@ class Music {
 const view = document.getElementById('root');
 const activeScreen = new Music(view);
 
-export default activeScreen ;
+export default activeScreen;

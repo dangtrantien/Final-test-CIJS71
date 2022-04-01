@@ -3,9 +3,9 @@ import SubsBtn from "./subscribe_button.js";
 import ActiveSubs from "./active_subscribe.js";
 
 class Subs {
-    constructor () {
+    constructor() {
         this.$container = document.createElement('div');
-        this.$container.setAttribute('class', 'mt-4 display_flex');
+        this.$container.setAttribute('class', 'py-4 display_flex border-b');
 
         this.$subs_btn_box = document.createElement('div');
         this.$subs_btn_box.setAttribute('class', 'display_flex');
@@ -26,7 +26,7 @@ class Subs {
         });
     }
 
-    render () {
+    render() {
         this.$container.appendChild(this.$subs_btn_box);
         this.$container.appendChild(this.$active_subs_box);
 

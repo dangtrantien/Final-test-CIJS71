@@ -1,25 +1,36 @@
-import { auth } from "../constants/commons.js";
-import User from "./user.js";
+import CommentInput from "./comment_input.js";
+import Subs from "./subscribe.js";
 import CommentList from "./comment_list.js";
 
+
 class CommentContainer {
-    constructor () {
+    constructor(activeComment) {
+        this._setActiveComment = activeComment;
+        
         this.$comment_container = document.createElement('div');
         this.$comment_container.setAttribute(
             'class',
-            'max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 bg-white mt-20 '
+            'mx-32 px-8 py-4 bg-white hidden'
         );
 
-        this.$user = new User();
+        this.$input_comment = new CommentInput(this._setActiveComment);
 
-        this.$comment_list = new CommentList();
+        this.$subscribe = new Subs();
+
+        this.$comment_list = new CommentList(this._setActiveComment);
     }
 
-    render () {
-        this.$comment_container.appendChild(this.$user.render());
+    // setActiveComment(activeComment) {
+    //     this.$input_comment.setActiveComment(activeComment);
+    //     this.$comment_list.setActiveComment(activeComment);
+    // }
+
+    render(container) {
+        this.$input_comment.render(this.$comment_container);
+        this.$comment_container.appendChild(this.$subscribe.render());
         this.$comment_container.appendChild(this.$comment_list.render());
 
-        return this.$comment_container;
+        container.appendChild(this.$comment_container);
     }
 }
 
