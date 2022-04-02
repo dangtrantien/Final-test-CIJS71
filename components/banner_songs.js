@@ -1,5 +1,5 @@
 
-export default class Song {
+export default class BannerSong {
     constructor() {
         this.$container=document.createElement('div');
         this.$container.setAttribute('class','mt-16 w-full h-full relative  bg-[#6b6d83]');
