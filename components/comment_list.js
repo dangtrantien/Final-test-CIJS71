@@ -1,4 +1,4 @@
-import { query, where, onSnapshot } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-firestore.js";
+import { onSnapshot } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-firestore.js";
 import { messageRef } from "../constants/commons.js";
 import CommentItems from "./comment_items.js";
 

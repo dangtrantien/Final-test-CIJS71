@@ -8,7 +8,7 @@ class Main {
         this.$maincontainer = document.createElement('div');    
         this.$maincontainer.setAttribute(
             'class',
-            'h-screen bg-no-repeat bg-center bg-auto bg-gray-100'
+            'bg-no-repeat bg-center bg-auto bg-gray-100'
         );
 
         this.$navBar = new Navbar();
@@ -29,7 +29,11 @@ class Main {
         this.$maincontainer.appendChild(this.$banner.render());
         this.$maincontainer.appendChild(this.$list.render());
         this.$maincontainer.appendChild(this.$comment.render());
+// <<<<<<< Updated upstream
 
+// =======
+        // this.$maincontainer.appendChild(parse.html.render())
+// >>>>>>> Stashed changes
         container.appendChild(this.$maincontainer);
     }
 }

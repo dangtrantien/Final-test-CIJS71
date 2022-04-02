@@ -23,7 +23,7 @@ class NavBar  {
             'class',
             'ml-4 italic text-xl text-white font-medium cursor-pointer'
         );
-        this.$SoundMay.innerText = 'SoundMay';
+        this.$SoundMay.innerText = 'Sound Mây';
 
         this.$UserBox = document.createElement('div');
         this.$UserBox.setAttribute('class','display_flex');
