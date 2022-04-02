@@ -1,5 +1,4 @@
 import MusicPlayer from "./active_music_player.js";
-// import CommentContainer from "./comment_container.js";
 
 class Post {
   constructor(song, setActiveMusic) {
@@ -25,8 +24,6 @@ class Post {
   setMusicPlayer = () => {
     const musicPlayer = new MusicPlayer(this._song);
     this._setActiveMusic(musicPlayer, this._song);
-
-    // const comment = new CommentContainer(this._song);
   };
 
   render() {

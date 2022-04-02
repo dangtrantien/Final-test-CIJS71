@@ -34,6 +34,42 @@ class MusicPlayer {
 
         this.$artist = document.createElement('p');
         this.$artist.innerText = `Artist - ${song.singer}`;
+
+        this.$line = document.createElement('div')
+        this.$line.setAttribute('class', "h-[3px] w-full bg-[#525363] absolute top-[360px] ")
+
+        this.$button = document.createElement('div')
+        this.$button.setAttribute('class', 'absolute top-[400px] left-[215px]')
+
+        this.$buttonBacks = document.createElement('i')
+        this.$buttonBacks.setAttribute('class', "fas fa-backward text-white text-5xl cursor-pointer")
+
+        this.$butonPause = document.createElement('i')
+        this.$butonPause.setAttribute('class',
+            'fas fa-play-circle text-cyan-400 text-6xl ml-16  cursor-pointer pause'
+        )
+        this.$butonPause.addEventListener('click', this.playAudio)
+
+        this.$audio = document.createElement('audio')
+        this.$audio.setAttribute('src', '../photos/audio1.mp3')
+        this.$audio.setAttribute('id', '1');
+
+        this.$buttonNext = document.createElement('i')
+        this.$buttonNext.setAttribute(
+            'class',
+            'fas fa-forward text-white text-5xl ml-16 cursor-pointer'
+        )
+
+        this.$buttonSound = document.createElement('i')
+        this.$buttonSound.setAttribute('class', 'fas fa-volume-up text-white text-5xl ml-10 cursor-pointer')
+    }
+
+    playAudio = (e) => {
+        e.preventDefault();
+        $(".fa-play-circle").toggleClass("fa fa-pause")
+        var a = document.getElementById('1')
+        console.log(a);
+        return a.paused ? a.play() : a.pause();
     }
 
     render() {
@@ -45,6 +81,16 @@ class MusicPlayer {
         this.$song_container.appendChild(this.$tagbox);
         this.$tagbox.appendChild(this.$title);
         this.$tagbox.appendChild(this.$artist);
+
+        this.$song_container.appendChild(this.$line);
+
+        this.$song_container.appendChild(this.$button);
+        this.$button.appendChild(this.$buttonBacks);
+        this.$button.appendChild(this.$butonPause);
+        this.$button.appendChild(this.$buttonNext);
+        this.$button.appendChild(this.$buttonSound);
+        
+        this.$song_container.appendChild(this.$audio);
 
         return this.$container;
     }

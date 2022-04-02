@@ -8,7 +8,7 @@ class NavBar {
         this.$navcontainer = document.createElement('nav');
         this.$navcontainer.setAttribute(
             "class",
-            "bg-gray-800 h-17 w-screen px-32 display_flex fixed top-0 left-0 right-0"
+            "bg-gray-800 h-17 w-screen px-32 display_flex fixed z-50 top-0 left-0 right-0"
         );
 
         this.$logo = document.createElement('div');

@@ -1,4 +1,3 @@
-import Banner from "../components/banner.js";
 import List from "../components/list.js";
 import Navbar from "../components/navBar.js";
 import CommentContainer from "../components/comment_container.js";
@@ -20,19 +19,11 @@ class Main {
 
     this.$navBar = new Navbar();
 
-    this.$banner = document.createElement("div");
-    this.$banner.appendChild(
-      new Banner((musicComponent, activeSong) =>
-        this.setActiveMusic(musicComponent, activeSong)
-      ).render()
-    );
-
     this.$commentContainer = new CommentContainer();
   }
 
   setActiveMusic(musicComponent, activeSong) {
     this.$listcontainer.innerHTML = "";
-    this.$banner.innerHTML = "";
     this.$commentContainer.$comment_container.classList.toggle("hidden");
     this.$commentContainer.setActiveComment(activeSong);
     this.$listcontainer.appendChild(musicComponent.render());
@@ -40,7 +31,6 @@ class Main {
 
   render(container) {
     this.$maincontainer.appendChild(this.$navBar.render());
-    this.$maincontainer.appendChild(this.$banner);
     this.$maincontainer.appendChild(this.$listcontainer);
     this.$commentContainer.render(this.$maincontainer);
 

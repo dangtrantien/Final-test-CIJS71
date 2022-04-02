@@ -13,7 +13,7 @@ class Music {
     onAuthListener() {
         onAuthStateChanged(auth, (user) => {
             if (user) {
-                const main = new MainDetail();
+                const main = new Main();
                 activeScreen.setActiveScreen(main);
             }
             else {

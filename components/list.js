@@ -8,7 +8,6 @@ class List {
     this.$Container.setAttribute("class", "px-32");
 
     this.$category = document.createElement("h2");
-    this.$category.innerText = "US UK";
     this.$category.setAttribute("class", "mt-32");
 
     this.$listContainer = document.createElement("div");
