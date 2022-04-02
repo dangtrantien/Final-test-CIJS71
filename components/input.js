@@ -1,5 +1,5 @@
 class Input {
-    constructor (tag_name, type, placeholder, error) {
+    constructor(tag_name, type, placeholder, error) {
         this.$container = document.createElement('div');
 
         this.$tag_name = document.createElement('layer');
@@ -23,26 +23,26 @@ class Input {
             'class',
             'invisible text-red-500 text-sm'
         );
-     
+
     }
 
-    getValue () {
+    getValue() {
         return this.$input.value;
     }
 
-    warning (value, valid_value) {
+    warning(value, valid_value) {
         if (!value.match(valid_value)) {
-            this.$error.classList.replace('invisible','visible');
+            this.$error.classList.replace('invisible', 'visible');
         }
         else {
-            this.$error.classList.replace('visible','invisible');
+            this.$error.classList.replace('visible', 'invisible');
         }
     }
 
-    render () {
+    render() {
         this.$container.appendChild(this.$tag_name);
         this.$container.appendChild(this.$input);
-        this.$input.insertAdjacentElement('afterend',this.$error);
+        this.$input.insertAdjacentElement('afterend', this.$error);
 
         return this.$container;
     }

@@ -1,35 +1,37 @@
-
 export default class BannerSong {
     constructor() {
-        this.$container=document.createElement('div');
-        this.$container.setAttribute('class','mt-16 w-full h-full relative  bg-[#6b6d83]');
-      
-        this.$playername=document.createElement('img')
-        this.$playername.setAttribute('src',"http://images.genius.com/2216a21a5494b153cb4c24005370d031.700x700x1.jpg")
+        this.$container = document.createElement('div');
+        this.$container.setAttribute('class', 'mt-16 w-full h-full relative  bg-[#6b6d83]');
+
+        this.$playername = document.createElement('img')
+        this.$playername.setAttribute('src', "http://images.genius.com/2216a21a5494b153cb4c24005370d031.700x700x1.jpg")
         this.$playername.setAttribute('class',
-        'bg-cover bg-no-repeat h-[230px] w-[230px] absolute  left-[270px] -top-[50px] shadow-[0px_24px_54px_-12px_rgba(0,0,0,0.3)]'
-        ) 
-        this.$tagbox=document.createElement('div')
-        this.$tagbox.setAttribute('class','absolute top-[240px] left-[100px]  text-xl text-white')
+            'bg-cover bg-no-repeat h-[230px] w-[230px] absolute  left-[270px] -top-[50px] shadow-[0px_24px_54px_-12px_rgba(0,0,0,0.3)]'
 
-        this.$line=document.createElement('div')
-        this.$line.setAttribute('class',"h-[3px] w-full bg-[#525363] absolute top-[360px] ")
+        )
 
-        this.$title=document.createElement('p')
-        this.$title.innerText='Leave Your Lover'
+        this.$tagbox = document.createElement('div')
+        this.$tagbox.setAttribute('class', 'absolute top-[240px] left-[100px]  text-xl text-white')
 
-        this.$artist=document.createElement('p')
-        this.$artist.innerText='Artist - Echos'
+        this.$line = document.createElement('div')
+        this.$line.setAttribute('class', "h-[3px] w-full bg-[#525363] absolute top-[360px] ")
 
-        this.$albums=document.createElement('p')
-        this.$albums.innerText='Album - Echos'
+        this.$title = document.createElement('p')
+        this.$title.innerText = 'Leave Your Lover'
 
-        this.$paytime=document.createElement('div')
-        this.$paytime.innerText='1:44'
+        this.$artist = document.createElement('p')
+        this.$artist.innerText = 'Artist - Echos'
+
+        this.$albums = document.createElement('p')
+        this.$albums.innerText = 'Album - Echos'
+
+        this.$paytime = document.createElement('div')
+        this.$paytime.innerText = '1:44'
         this.$paytime.setAttribute(
             'class',
             'text-white  absolute top-[420px] left-[30px] text-lg   '
         )
+
         this.$button=document.createElement('div')
         this.$button.setAttribute('class','absolute top-[400px] left-[215px]')
         
@@ -62,7 +64,6 @@ export default class BannerSong {
           $(".fa-play-circle").toggleClass("fa fa-pause")   
          var a= document.getElementById('1') 
         return a.paused ? a.play() : a.pause();  
-
     }
 
     render() {
@@ -73,15 +74,15 @@ export default class BannerSong {
         this.$button.appendChild(this.$buttonBacks)
         this.$button.appendChild(this.$butonPause)
         this.$button.appendChild(this.$buttonNext)
-        this.$button.appendChild(this.$buttonSound) 
+
+        this.$button.appendChild(this.$buttonSound)
+
         this.$container.appendChild(this.$button)
         this.$container.appendChild(this.$tagbox)
         this.$container.appendChild(this.$line)
         this.$container.appendChild(this.$paytime)
-        this.$container.appendChild(this.$audio)
 
+        this.$container.appendChild(this.$audio)
 
         return this.$container
     }
-
-}

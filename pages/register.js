@@ -5,19 +5,19 @@ import activeScreen from "../index.js";
 import Login from "./login.js";
 
 class Register {
-    constructor () {
+    constructor() {
         this.$container = document.createElement('form');
         this.$container.setAttribute(
             'class',
             'w-screen h-screen bg-no-repeat bg-center bg-auto bg-cover'
         );
-        this.$container.setAttribute('style','background-image: url(/photos/istockphoto-1047288798-1540x760.jpg)')
+        this.$container.setAttribute('style', 'background-image: url(/photos/6714.jpg_wh300.jpg)')
         this.$container.addEventListener('submit', this.onSubmit);
 
         this.$user = document.createElement('div');
         this.$user.setAttribute(
             'class',
-            'w-1/3 p-4 rounded-2xl border-solid border-2 absolute top-32 left-1/3'
+            'w-1/3 bg-black p-4 rounded-2xl border-solid border-2 absolute top-32 left-1/3'
         );
 
         this.$name = new Input(
@@ -75,14 +75,14 @@ class Register {
         const email = this.$email.getValue();
         let valid_Email = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-        this.$email.warning(email,valid_Email);
+        this.$email.warning(email, valid_Email);
     }
 
     invalidPassword = () => {
         const password = this.$password.getValue();
         let valid_Password = /^[A-Za-z](?=.*\d)\w{7,}$/;
-        
-        this.$password.warning(password,valid_Password);
+
+        this.$password.warning(password, valid_Password);
     };
 
     gotoPage = () => {
@@ -101,36 +101,36 @@ class Register {
             const email = this.$email.getValue();
             const password = this.$password.getValue();
             const confirm_Password = this.$confirm_password.getValue();
-            
+
             const valid_Email = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             const valid_Password = /^[A-Za-z](?=.*\d)\w{7,}$/;
-            
+
             if (!email.match(valid_Email)) {
-                alert ('Please provide a valid email');
+                alert('Please provide a valid email');
             }
 
             else if (!password.match(valid_Password)) {
-                alert ('Please provide a valid password');
+                alert('Please provide a valid password');
             }
 
             else if (password === confirm_Password) {
                 const response = await createUserWithEmailAndPassword(auth, email, password);
                 const user = response.user;
-                    if (user) {
-                        const login = new Login();
-                        activeScreen.setActiveScreen(login);
-                    }
+                if (user) {
+                    const login = new Login();
+                    activeScreen.setActiveScreen(login);
+                }
             }
             else {
-                alert ("Password dose not match");
+                alert("Password dose not match");
             }
         }
         catch (error) {
-            alert ('Something wrong', error)
+            alert('Something wrong', error)
         }
     }
 
-    render (container) {
+    render(container) {
         this.$container.appendChild(this.$user);
         this.$user.appendChild(this.$name.render());
         this.$user.appendChild(this.$email.render());

@@ -6,13 +6,13 @@ import activeScreen from "../index.js";
 import Main from "./main.js";
 
 class Login {
-    constructor () {
+    constructor() {
         this.$container = document.createElement('form');
         this.$container.setAttribute(
             'class',
             'w-screen h-screen bg-no-repeat bg-center bg-auto bg-cover'
         );
-        this.$container.setAttribute('style','background-image: url(/photos/istockphoto-1047288798-1540x760.jpg)')
+        this.$container.setAttribute('style', 'background-image: url(/photos/6714.jpg_wh300.jpg)')
         this.$container.addEventListener('submit', this.onSubmit);
 
         this.$title = document.createElement('div');
@@ -29,7 +29,7 @@ class Login {
         );
 
         this.$title_2 = document.createElement('h1');
-        this.$title_2.innerText = 'SoundMay';
+        this.$title_2.innerText = 'Sound Mây';
         this.$title_2.setAttribute(
             'class',
             'w-fit text-9xl'
@@ -39,7 +39,7 @@ class Login {
         this.$user = document.createElement('div');
         this.$user.setAttribute(
             'class',
-            'w-1/3 p-4 rounded-2xl border-solid border-2 absolute top-80 left-1/3'
+            'w-1/3 bg-black p-4 rounded-2xl border-solid border-2 absolute top-80 left-1/3'
         );
 
         this.$email = new Input(
@@ -90,10 +90,10 @@ class Login {
             const password = this.$password.getValue();
 
             if (email && password) {
-                const response = await signInWithEmailAndPassword(auth,email,password);
+                const response = await signInWithEmailAndPassword(auth, email, password);
                 const user = response.user;
                 if (user) {
-                    alert ('Login successfull');
+                    alert('Login successfull');
                     const main = new Main();
                     activeScreen.setActiveScreen(main);
                 }
@@ -107,7 +107,7 @@ class Login {
         }
     }
 
-    render (container) {
+    render(container) {
         this.$container.appendChild(this.$title);
         this.$title.appendChild(this.$title_1);
         this.$title.appendChild(this.$title_2);

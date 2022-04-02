@@ -1,5 +1,5 @@
 class ActiveSubs {
-    constructor (icon, count) {
+    constructor(icon, count) {
         this.$container = document.createElement('div');
         this.$container.setAttribute(
             'class',
@@ -13,9 +13,9 @@ class ActiveSubs {
         this._icon = icon;
     }
 
-    render () {
+    render() {
         this.$container.appendChild(this.$count_subs);
-        this.$container.insertAdjacentHTML('afterbegin',this._icon);
+        this.$container.insertAdjacentHTML('afterbegin', this._icon);
 
         return this.$container;
     }

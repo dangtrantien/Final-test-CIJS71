@@ -4,34 +4,48 @@ import Navbar from "../components/navBar.js";
 import CommentContainer from "../components/comment_container.js";
 
 class Main {
-    constructor () {
-        this.$maincontainer = document.createElement('div');    
-        this.$maincontainer.setAttribute(
-            'class',
-            'bg-no-repeat bg-center bg-auto bg-gray-100'
-        );
+  constructor() {
+    this.$maincontainer = document.createElement("div");
+    this.$maincontainer.setAttribute(
+      "class",
+      "bg-no-repeat bg-center bg-auto bg-gray-100"
+    );
 
-        this.$navBar = new Navbar();
+    this.$listcontainer = document.createElement("div");
+    this.$listcontainer.appendChild(
+      new List((musicComponent, activeSong) =>
+        this.setActiveMusic(musicComponent, activeSong)
+      ).render()
+    );
 
-        this.$banner = new Banner();
+    this.$navBar = new Navbar();
 
-        this.$list = new List();
+    this.$banner = document.createElement("div");
+    this.$banner.appendChild(
+      new Banner((musicComponent, activeSong) =>
+        this.setActiveMusic(musicComponent, activeSong)
+      ).render()
+    );
 
-        this.$comment = new CommentContainer();
-    }
+    this.$commentContainer = new CommentContainer();
+  }
 
-    setActiveConversation (conversation) {
-        this.$maincontainer.setActiveConversation(conversation);
-    }
+  setActiveMusic(musicComponent, activeSong) {
+    this.$listcontainer.innerHTML = "";
+    this.$banner.innerHTML = "";
+    this.$commentContainer.$comment_container.classList.toggle("hidden");
+    this.$commentContainer.setActiveComment(activeSong);
+    this.$listcontainer.appendChild(musicComponent.render());
+  }
 
-    render (container) {
-        this.$maincontainer.appendChild(this.$navBar.render());
-        this.$maincontainer.appendChild(this.$banner.render());
-        this.$maincontainer.appendChild(this.$list.render());
-        this.$maincontainer.appendChild(this.$comment.render());
+  render(container) {
+    this.$maincontainer.appendChild(this.$navBar.render());
+    this.$maincontainer.appendChild(this.$banner);
+    this.$maincontainer.appendChild(this.$listcontainer);
+    this.$commentContainer.render(this.$maincontainer);
 
-        container.appendChild(this.$maincontainer);
-    }
+    container.appendChild(this.$maincontainer);
+  }
 }
 
 export default Main;

@@ -1,7 +1,10 @@
 import { subs_mock } from "../acet/mock.js";
+import { auth } from "../constants/commons.js";
 
 class SubsBtn {
-    constructor (subs_btn, icon) {
+    constructor(subs_btn, icon) {
+        this._user = auth.currentUser.uid;
+
         this.$container = document.createElement('div');
         this.$container.setAttribute('class', 'display_flex');
 
@@ -15,7 +18,7 @@ class SubsBtn {
         this.$button = document.createElement('button');
         this.$button.innerText = subs_btn;
         this.$button.setAttribute('class', 'ml-2');
-  
+
         this._icon = icon;
     }
 
@@ -37,7 +40,7 @@ class SubsBtn {
                         'text-red-500',
                         'hover:border-red-500'
                     );
-                    this.$button.innerText = data.on_subs;            
+                    this.$button.innerText = data.on_subs;
                 }
                 else {
                     this.$subs_btn.classList.remove(
@@ -50,10 +53,10 @@ class SubsBtn {
         })
     }
 
-    render () {
+    render() {
         this.$container.appendChild(this.$subs_btn);
         this.$subs_btn.appendChild(this.$button);
-        this.$subs_btn.insertAdjacentHTML('afterbegin',this._icon);
+        this.$subs_btn.insertAdjacentHTML('afterbegin', this._icon);
 
         return this.$container;
     }
