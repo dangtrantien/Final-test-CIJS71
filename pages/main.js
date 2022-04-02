@@ -34,7 +34,7 @@ class Main {
     this.$listcontainer.innerHTML = "";
     this.$banner.innerHTML = "";
     this.$commentContainer.$comment_container.classList.toggle("hidden");
-    this.$commentContainer.$input_comment.setActiveComment(activeSong);
+    this.$commentContainer.setActiveComment(activeSong);
     this.$listcontainer.appendChild(musicComponent.render());
   }
 

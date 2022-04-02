@@ -16,13 +16,13 @@ class CommentContainer {
 
     this.$subscribe = new Subs();
 
-    this.$comment_list = new CommentList(this._setActiveComment);
+    this.$comment_list = new CommentList();
   }
 
-  // setActiveComment(activeComment) {
-  //     this.$input_comment.setActiveComment(activeComment);
-  //     this.$comment_list.setActiveComment(activeComment);
-  // }
+  setActiveComment(activeComment) {
+      this.$input_comment.setActiveComment(activeComment);
+      this.$comment_list.setActiveComment(activeComment);
+  }
 
   render(container) {
     this.$input_comment.render(this.$comment_container);
