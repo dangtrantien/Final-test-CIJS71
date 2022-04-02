@@ -23,8 +23,14 @@ class SubsBtn {
     }
 
     onSubs = (e) => {
+// <<<<<<< Updated upstream
         e.preventDefault();
 
+// =======
+        e.preventDefault;
+
+        this._count++;
+// >>>>>>> Stashed changes
         subs_mock.forEach((data) => {
             const subs_btn = this.$button.innerText;
 
