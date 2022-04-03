@@ -11,10 +11,15 @@ class Main {
     );
 
     this.$listcontainer = document.createElement("div");
-    this.$listcontainer.appendChild(
-      new List((musicComponent, activeSong) =>
-        this.setActiveMusic(musicComponent, activeSong)
-      ).render()
+
+    this.$list_Viet = new List(
+      'Nhạc Việt',
+      (musicComponent, activeSong) => this.setActiveMusic(musicComponent, activeSong)
+    );
+
+    this.$list_US_UK = new List(
+      'Nhạc Âu Mỹ',
+      (musicComponent, activeSong) => this.setActiveMusic(musicComponent, activeSong)
     );
 
     this.$navBar = new Navbar();
@@ -32,6 +37,8 @@ class Main {
   render(container) {
     this.$maincontainer.appendChild(this.$navBar.render());
     this.$maincontainer.appendChild(this.$listcontainer);
+    this.$listcontainer.appendChild(this.$list_US_UK.render());
+    this.$listcontainer.appendChild(this.$list_Viet.render());
     this.$commentContainer.render(this.$maincontainer);
 
     container.appendChild(this.$maincontainer);

@@ -52,7 +52,6 @@ class MusicPlayer {
 
         this.$audio = document.createElement('audio')
         this.$audio.setAttribute('src', '../photos/audio1.mp3')
-        this.$audio.setAttribute('id', '1');
 
         this.$buttonNext = document.createElement('i')
         this.$buttonNext.setAttribute(
@@ -67,9 +66,7 @@ class MusicPlayer {
     playAudio = (e) => {
         e.preventDefault();
         $(".fa-play-circle").toggleClass("fa fa-pause")
-        var a = document.getElementById('1')
-        console.log(a);
-        return a.paused ? a.play() : a.pause();
+        return this.$audio.paused ? this.$audio.play() : this.$audio.pause();
     }
 
     render() {
